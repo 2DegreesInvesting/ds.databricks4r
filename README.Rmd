@@ -17,7 +17,7 @@ Terminal.
 
 At the end of this series you'll be able to do things like this:
 
-* Add folder, .R files and notebooks to your Workspace.
+* Add folders, .R files and notebooks to your Workspace.
 * Connect to an existing cluster.
 * Work with Git and GitHub.
 * Create a dataframe from a .csv file in the file system.
@@ -121,7 +121,10 @@ data
 
 LIMITATIONS AND SURPRISES
 
-* SparkR is no longer on CRAN [(archived in 2021 for lack of maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html). The sparklyr package seem like a good alternative but I failed to use it.
+* SparkR is no longer on CRAN [(archived in 2021 for lack of maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
+* The sparklyr package seem like a good alternative but I failed to use it.
+* Code written for R dataframes may not work for [spark dataframes](https://spark.apache.org/docs/latest/sparkr.html#sparkdataframe-operations).
+* The [sparklyr package](https://spark.rstudio.com/deployment/databricks-cluster.html) may help but I failed to configure and use it.
 
 ### Workflows
 
