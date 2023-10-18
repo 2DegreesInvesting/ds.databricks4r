@@ -116,7 +116,11 @@ for (i in seq_along(cols)) {
 
 - Create a workflow, run and view the workflow.
 
-## Overview clusters and RStudio
+LIMITATIONS AND SURPRISES
+
+- The interface to select notebooks in Repos/ seems buggy.
+
+## Clusters (and RStudio)
 
 - Create a new cluster with RStudio (new-ish, Runtime ML, no auto
   termination).
@@ -129,7 +133,3 @@ LIMITATIONS AND SURPRISES
 - RStudio lacks `sudo`.
 - RStudio requires no auto-termination.
 - RStudio fails to read from the Databricks Catalog.
-
-## Overview GitHub connection
-
-…
