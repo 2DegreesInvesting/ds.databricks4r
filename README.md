@@ -1,5 +1,5 @@
 
-# Introduction to Databricks for R analysts and developers
+# Databricks for RStudio users
 
 The goal of this series is to help R users understand if and how they
 can do in Databricks the things they already do elsewhere – mainly un
