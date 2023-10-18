@@ -78,11 +78,9 @@ LIMITATIONS AND SURPRISES
 
 ## Workflows
 
-* Create a workflow that writes then deletes .csv files.
+* Create a notebook that writes then deletes .csv files.
 
 ```r
-# Notebook to write files
-
 data <- cars
 cols <- names(data)
 
@@ -95,13 +93,7 @@ for (i in seq_along(cols)) {
 }
 ```
 
-```r
-# Notebook to delete files
-csv_files <- fs::dir_ls(regexp="[.]csv")
-fs::file_delete(csv_files)
-```
-
-* Run and view.
+* Create a workflow, run and view the workflow.
 
 ## Overview clusters and RStudio
 

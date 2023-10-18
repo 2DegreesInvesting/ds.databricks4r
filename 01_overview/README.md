@@ -3,8 +3,6 @@
 
 ## Workspace
 
-### Databricks UI, .R files, and notebooks
-
 - Add a folder: Home \> Add \> Folder
 - Add an R file: Home \> Add \> file.R
 - Connect to a running cluster.
@@ -79,6 +77,25 @@ LIMITATIONS AND SURPRISES
   maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
   The sparklyr package seem like a good alternative but I failed to use
   it.
+
+## Workflows
+
+- Create a notebook that writes then deletes .csv files.
+
+``` r
+data <- cars
+cols <- names(data)
+
+for (i in seq_along(cols)) {
+  path <- paste0(cols[i], ".csv")
+  message("Writing ", path, " in ", getwd())
+  readr::write_csv(data[i], path)
+  
+  Sys.sleep(5)
+}
+```
+
+- Create a workflow, run and view the workflow.
 
 ## Overview clusters and RStudio
 
