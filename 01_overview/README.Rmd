@@ -76,6 +76,11 @@ LIMITATIONS AND SURPRISES
 
 * SparkR is no longer on CRAN [(archived in 2021 for lack of maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html). The sparklyr package seem like a good alternative but I failed to use it.
 
+## Repos
+
+* Cone https://github.com/2DegreesInvesting/ds.databricks4r
+
+
 ## Workflows
 
 * Create a notebook that writes then deletes .csv files.
