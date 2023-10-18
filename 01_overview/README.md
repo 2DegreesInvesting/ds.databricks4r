@@ -120,7 +120,7 @@ LIMITATIONS AND SURPRISES
 
 - The interface to select notebooks in Repos/ seems buggy.
 
-## Clusters (and RStudio)
+## Clusters and RStudio
 
 - Create a new cluster with RStudio (new-ish, Runtime ML, no auto
   termination).
