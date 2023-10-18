@@ -1,6 +1,3 @@
-Write .csv files.
-
-```{r}
 data <- cars
 cols <- names(data)
 
@@ -11,4 +8,3 @@ for (i in seq_along(cols)) {
   
   Sys.sleep(5)
 }
-```
