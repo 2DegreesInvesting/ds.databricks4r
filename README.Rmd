@@ -78,3 +78,6 @@ This chapters focuses on workflows common to developers working in RStudio:
 ## Thanks
 
 Tanks Sven for patiently answering my questions.
+
+
+
