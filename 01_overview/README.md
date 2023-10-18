@@ -51,6 +51,25 @@ $ ls /Repos
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
 
+## Repos
+
+- Cone <https://github.com/2DegreesInvesting/ds.databricks4r>
+- Change README on a new branch.
+- Commit and push.
+- Create a PR on GitHub.
+
+LIMITATIONS AND SURPRISES
+
+- Support for Git is limited. Advanced operations aren’t possible from
+  the UI.
+- Working from a Terminal also seems restricted.
+
+``` bash
+root@1018-182832-kwuivpuh-10-139-64-8:/Workspace/Repos/mauro@2degrees-investing.org/ds.databricks4r# git status
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+```
+
 ## Catalog
 
 Read a .csv file from the file system.
