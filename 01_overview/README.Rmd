@@ -79,7 +79,14 @@ LIMITATIONS AND SURPRISES
 ## Repos
 
 * Cone https://github.com/2DegreesInvesting/ds.databricks4r
+* Change README on a new branch.
+* Commit and push.
+* Create a PR on GitHub.
 
+LIMITATIONS AND SURPRISES
+
+* Support for Git is limited. Advanced operations aren't possible from the UI.
+* Working from a Terminal also seems restricted (no .git/).
 
 ## Workflows
 
