@@ -17,11 +17,9 @@ ANALYST WORKFLOWS
 > This is easy with R, Python and SQL. For example:
 
 ```r
-%r
-library(SparkR, warn.conflicts=FALSE)
-
-df <- tableToDF("raw.default.country")
-display(df)
+path <- "raw.default.country"
+data <- SparkR::tableToDF("raw.default.country")
+data
 ```
 
 * Read data from the Azure Storage
