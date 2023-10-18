@@ -154,6 +154,22 @@ LIMITATIONS AND SURPRISES
 * Create a new cluster with RStudio (new-ish, Runtime ML, no auto termination).
 * Try to use it to run a previous file. Note it takes time to start.
 * Setup RStudio: Compute > click on cluster > Apps > Set up RStudio.
+* Read data from an Azure storage container via a SAS token.
+
+<img width=700 src=https://github.com/2DegreesInvesting/tiltIndicator/assets/5856545/f8aa5a3e-ebff-48e6-87eb-889f477c8831>
+
+```r
+library(AzureStor)
+
+# usethis::edit_r_environ()
+# User delegation key with all 10 permissions
+# AZURE_CONTAINER_SAS_TEST_MAURO="paste the SAS token here"
+url <- "https://storagetiltdevelop.blob.core.windows.net/test-mauro"
+sas <- Sys.getenv("AZURE_CONTAINER_SAS_TEST_MAURO")
+container <- blob_container(url, sas = sas)
+
+storage_read_csv(container, "data/iris.csv")
+```
 
 LIMITATIONS AND SURPRISES
 
