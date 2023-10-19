@@ -81,15 +81,26 @@ $ ls /Repos
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
 
-FRICTION \### Catalog
+### Repos
 
-Read a .csv file from the file system.
+- Cone <https://github.com/2DegreesInvesting/ds.databricks4r>
+- Change README on a new branch.
+- Commit and push.
+- Create a PR on GitHub.
 
-``` r
-path <- "/databricks-datasets/Rdatasets/data-001/datasets.csv"
-data <- readr::read_csv(path)
-data
+FRICTION
+
+- Support for Git is limited. Advanced operations aren’t possible from
+  the UI.
+- Working from a Terminal also seems restricted.
+
+``` bash
+/Workspace/Repos/mauro@2degrees-investing.org/ds.databricks4r# git status
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 ```
+
+### Catalog
 
 Read a parquet file from the Databricks Catalog.
 
@@ -101,25 +112,15 @@ data <- SparkR::tableToDF("raw.default.country")
 data
 ```
 
-FRICTION
+From Databrisks, read a .csv file from “disk”.
 
-- SparkR is no longer on CRAN [(archived in 2021 for lack of
-  maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
-- The sparklyr package seem like a good alternative but I failed to use
-  it.
-- Code written for R dataframes may not work for [spark
-  dataframes](https://spark.apache.org/docs/latest/sparkr.html#sparkdataframe-operations).
-- The [sparklyr
-  package](https://spark.rstudio.com/deployment/databricks-cluster.html)
-  may help but I failed to configure and use it.
+``` r
+path <- "/databricks-datasets/Rdatasets/data-001/datasets.csv"
+data <- readr::read_csv(path)
+data
+```
 
-FRICTION \### Compute
-
-- Create a new cluster with RStudio (new-ish, Runtime ML, no auto
-  termination).
-- Try to use it to run a previous file. Note it takes time to start.
-- Setup RStudio: Compute \> click on cluster \> Apps \> Set up RStudio.
-- Read data from an Azure storage container via a SAS token.
+- From anywhere, read a .csv file from Azure storage.
 
 <img width=700 src=https://github.com/2DegreesInvesting/tiltIndicator/assets/5856545/f8aa5a3e-ebff-48e6-87eb-889f477c8831>
 
@@ -135,6 +136,48 @@ container <- blob_container(url, sas = sas)
 
 storage_read_csv(container, "data/iris.csv")
 ```
+
+FRICTION
+
+- SparkR is no longer on CRAN [(archived in 2021 for lack of
+  maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
+- The sparklyr package seem like a good alternative but I failed to use
+  it.
+- Code written for R dataframes may not work for [spark
+  dataframes](https://spark.apache.org/docs/latest/sparkr.html#sparkdataframe-operations).
+- The [sparklyr
+  package](https://spark.rstudio.com/deployment/databricks-cluster.html)
+  may help but I failed to configure and use it.
+
+### Workflows
+
+- Create a notebook that writes then deletes .csv files.
+
+``` r
+data <- cars
+cols <- names(data)
+
+for (i in seq_along(cols)) {
+  path <- paste0(cols[i], ".csv")
+  message("Writing ", path, " in ", getwd())
+  readr::write_csv(data[i], path)
+  
+  Sys.sleep(5)
+}
+```
+
+- Create a workflow, run and view the workflow.
+
+FRICTION
+
+- The interface to select notebooks in Repos/ seems buggy.
+
+### Compute
+
+- Create a new cluster with RStudio (new-ish, Runtime ML, no auto
+  termination).
+- Try to use it to run a previous file. Note it takes time to start.
+- Setup RStudio: Compute \> click on cluster \> Apps \> Set up RStudio.
 
 FRICTION
 

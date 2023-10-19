@@ -63,7 +63,7 @@ print("Hello world")
 Hello world.
 ```
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 * Editing text is limited.
 
@@ -89,7 +89,7 @@ $ ls /Repos
 * Commit and push.
 * Create a PR on GitHub.
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 * Support for Git is limited. Advanced operations aren't possible from the UI.
 * Working from a Terminal also seems restricted.
@@ -101,14 +101,6 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 
 ### Catalog
 
-Read a .csv file from the file system.
-
-```r
-path <- "/databricks-datasets/Rdatasets/data-001/datasets.csv"
-data <- readr::read_csv(path)
-data
-```
-
 Read a parquet file from the Databricks Catalog.
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/a632de43-c83e-41be-9577-3b7c89019156>
@@ -119,7 +111,32 @@ data <- SparkR::tableToDF("raw.default.country")
 data
 ```
 
-LIMITATIONS AND SURPRISES
+From Databrisks, read a .csv file from "disk".
+
+```r
+path <- "/databricks-datasets/Rdatasets/data-001/datasets.csv"
+data <- readr::read_csv(path)
+data
+```
+
+* From anywhere, read a .csv file from Azure storage.
+
+<img width=700 src=https://github.com/2DegreesInvesting/tiltIndicator/assets/5856545/f8aa5a3e-ebff-48e6-87eb-889f477c8831>
+
+```r
+library(AzureStor)
+
+# usethis::edit_r_environ()
+# User delegation key with all 10 permissions
+# AZURE_CONTAINER_SAS_TEST_MAURO="paste the SAS token here"
+url <- "https://storagetiltdevelop.blob.core.windows.net/test-mauro"
+sas <- Sys.getenv("AZURE_CONTAINER_SAS_TEST_MAURO")
+container <- blob_container(url, sas = sas)
+
+storage_read_csv(container, "data/iris.csv")
+```
+
+FRICTION
 
 * SparkR is no longer on CRAN [(archived in 2021 for lack of maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
 * The sparklyr package seem like a good alternative but I failed to use it.
@@ -145,7 +162,7 @@ for (i in seq_along(cols)) {
 
 * Create a workflow, run and view the workflow.
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 * The interface to select notebooks in Repos/ seems buggy.
 
@@ -154,24 +171,8 @@ LIMITATIONS AND SURPRISES
 * Create a new cluster with RStudio (new-ish, Runtime ML, no auto termination).
 * Try to use it to run a previous file. Note it takes time to start.
 * Setup RStudio: Compute > click on cluster > Apps > Set up RStudio.
-* Read data from an Azure storage container via a SAS token.
 
-<img width=700 src=https://github.com/2DegreesInvesting/tiltIndicator/assets/5856545/f8aa5a3e-ebff-48e6-87eb-889f477c8831>
-
-```r
-library(AzureStor)
-
-# usethis::edit_r_environ()
-# User delegation key with all 10 permissions
-# AZURE_CONTAINER_SAS_TEST_MAURO="paste the SAS token here"
-url <- "https://storagetiltdevelop.blob.core.windows.net/test-mauro"
-sas <- Sys.getenv("AZURE_CONTAINER_SAS_TEST_MAURO")
-container <- blob_container(url, sas = sas)
-
-storage_read_csv(container, "data/iris.csv")
-```
-
-LIMITATIONS AND SURPRISES
+FRICTION
 
 * Starting a cluster takes minutes.
 * RStudio lacks `sudo`.
