@@ -186,6 +186,10 @@ for (i in seq_along(cols)) {
 - [What is
   Databricks](https://docs.databricks.com/en/introduction/index.html).
 
+## A note on friction
+
+I’m new to Databricks and that alone may explain many frictions.
+
 ## Thanks
 
 Tanks Sven for patiently answering my questions.
