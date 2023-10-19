@@ -163,7 +163,7 @@ for (i in seq_along(cols)) {
 }
 ```
 
-- Create a workflow, run and view the workflow.
+- Create a workflow, run it and view it.
 
 FRICTION
 
