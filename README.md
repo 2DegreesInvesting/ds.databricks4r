@@ -23,10 +23,10 @@ Analysts used to RStudio.
 
 Databricks allows you to work with data at scale from a simple
 interface. With that simple interface you can do powerful things, but
-not all the things you typically do in RStudio, and not in the way
-you’re used to. For example, it changes the way you install some
-software, read, and manipulate data. Recognizing the intended use of
-Databricks is crucial to avoid mistakes and friction.
+not all the things you typically do in RStudio, and not always in the
+way you’re used to. For example, sometimes you need to read, and
+manipulate data in a different way. Understanding what you can and
+shouldn’t do with Databricks will save you time and frustration.
 
 ## Workspace
 
