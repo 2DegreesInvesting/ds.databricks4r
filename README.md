@@ -78,6 +78,8 @@ $ ls /Repos
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
 
+- The Terminal is ephemeral unless you use `tmux`.
+
 ## Repos
 
 - Cone <https://github.com/2DegreesInvesting/ds.databricks4r>
@@ -87,9 +89,8 @@ $ ls /Repos
 
 FRICTION
 
-- Support for Git is limited. Advanced operations aren’t possible from
-  the UI.
-- Working from a Terminal also seems restricted.
+- Git operations from the UI are basic, and from the Terminal may be
+  impossible:
 
 ``` bash
 /Workspace/Repos/mauro@2degrees-investing.org/ds.databricks4r# git status
