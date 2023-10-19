@@ -12,8 +12,8 @@ At the end of this series you’ll be able to do things like this:
 - Create a dataframe from a .csv file in the file system.
 - Create a spark dataframe from a table in the Databricks Catalog.
 - Create and run jobs.
-- Create a cluster with RStudio installed in it.
-- Understand the frictions.
+- Create a cluster with RStudio installed in it. \*\* the \####
+  Frictions.\*\*
 
 ## Who is the audience?
 
@@ -55,7 +55,7 @@ print("Hello world")
 
     Hello world.
 
-FRICTION
+**Friction**
 
 - Editing text is limited.
 
@@ -87,7 +87,7 @@ $ ls /Repos
 - Commit and push.
 - Create a PR on GitHub.
 
-FRICTION
+**Friction**
 
 - Git operations from the UI are basic, and from the Terminal may be
   impossible:
@@ -135,7 +135,7 @@ container <- blob_container(url, sas = sas)
 storage_read_csv(container, "data/iris.csv")
 ```
 
-FRICTION
+**Friction**
 
 - SparkR is no longer on CRAN [(archived in 2021 for lack of
   maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
@@ -172,7 +172,7 @@ for (i in seq_along(cols)) {
 - Try to use it to run a previous file. Note it takes time to start.
 - Setup RStudio: Compute \> click on cluster \> Apps \> Set up RStudio.
 
-FRICTION
+**Friction**
 
 - Starting a cluster takes minutes.
 - RStudio lacks `sudo`.
