@@ -177,6 +177,7 @@ LIMITATIONS AND SURPRISES
 * RStudio lacks `sudo`.
 * RStudio requires no auto-termination.
 * RStudio fails to read from the Databricks Catalog.
+* RStudio won't persist when restarting the cluster.
 
 ## Resources
 

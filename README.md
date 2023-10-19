@@ -58,7 +58,7 @@ print("Hello world")
 
     Hello world.
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 - Editing text is limited.
 
@@ -81,26 +81,7 @@ $ ls /Repos
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
 
-### Repos
-
-- Cone <https://github.com/2DegreesInvesting/ds.databricks4r>
-- Change README on a new branch.
-- Commit and push.
-- Create a PR on GitHub.
-
-LIMITATIONS AND SURPRISES
-
-- Support for Git is limited. Advanced operations aren’t possible from
-  the UI.
-- Working from a Terminal also seems restricted.
-
-``` bash
-/Workspace/Repos/mauro@2degrees-investing.org/ds.databricks4r# git status
-fatal: not a git repository (or any parent up to mount point /)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
-```
-
-### Catalog
+FRICTION \### Catalog
 
 Read a .csv file from the file system.
 
@@ -120,7 +101,7 @@ data <- SparkR::tableToDF("raw.default.country")
 data
 ```
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 - SparkR is no longer on CRAN [(archived in 2021 for lack of
   maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
@@ -132,30 +113,7 @@ LIMITATIONS AND SURPRISES
   package](https://spark.rstudio.com/deployment/databricks-cluster.html)
   may help but I failed to configure and use it.
 
-### Workflows
-
-- Create a notebook that writes then deletes .csv files.
-
-``` r
-data <- cars
-cols <- names(data)
-
-for (i in seq_along(cols)) {
-  path <- paste0(cols[i], ".csv")
-  message("Writing ", path, " in ", getwd())
-  readr::write_csv(data[i], path)
-  
-  Sys.sleep(5)
-}
-```
-
-- Create a workflow, run and view the workflow.
-
-LIMITATIONS AND SURPRISES
-
-- The interface to select notebooks in Repos/ seems buggy.
-
-### Compute
+FRICTION \### Compute
 
 - Create a new cluster with RStudio (new-ish, Runtime ML, no auto
   termination).
@@ -178,12 +136,13 @@ container <- blob_container(url, sas = sas)
 storage_read_csv(container, "data/iris.csv")
 ```
 
-LIMITATIONS AND SURPRISES
+FRICTION
 
 - Starting a cluster takes minutes.
 - RStudio lacks `sudo`.
 - RStudio requires no auto-termination.
 - RStudio fails to read from the Databricks Catalog.
+- RStudio won’t persist when restarting the cluster.
 
 ## Resources
 
