@@ -28,9 +28,7 @@ you’re used to. For example, it changes the way you install some
 software, read, and manipulate data. Recognizing the intended use of
 Databricks is crucial to avoid mistakes and friction.
 
-## Syllabus
-
-### Workspace
+## Workspace
 
 - Add a folder: Home \> Add \> Folder
 - Add an R file: Home \> Add \> file.R
@@ -80,7 +78,7 @@ $ ls /Repos
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
 
-### Repos
+## Repos
 
 - Cone <https://github.com/2DegreesInvesting/ds.databricks4r>
 - Change README on a new branch.
@@ -99,7 +97,7 @@ fatal: not a git repository (or any parent up to mount point /)
 Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 ```
 
-### Catalog
+## Catalog
 
 Read a parquet file from the Databricks Catalog.
 
@@ -148,7 +146,7 @@ FRICTION
   package](https://spark.rstudio.com/deployment/databricks-cluster.html)
   may help but I failed to configure and use it.
 
-### Workflows
+## Workflows
 
 - Create a notebook that writes then deletes .csv files.
 
@@ -171,7 +169,7 @@ FRICTION
 
 - The interface to select notebooks in Repos/ seems buggy.
 
-### Compute
+## Compute
 
 - Create a new cluster with RStudio (new-ish, Runtime ML, no auto
   termination).
