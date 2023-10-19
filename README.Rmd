@@ -23,7 +23,7 @@ At the end of this series you'll be able to do things like this:
 * Create a spark dataframe from a table in the Databricks Catalog.
 * Create and run jobs.
 * Create a cluster with RStudio installed in it.
-* Understand the limitations and suprises in all of the above.
+* Understand the frictions.
 
 ## Who is the audience?
 
