@@ -158,10 +158,6 @@ for (i in seq_along(cols)) {
 
 * Create a workflow, run it and view it.
 
-FRICTION
-
-* The interface to select notebooks in Repos/ seems buggy.
-
 ## Compute
 
 * Create a new cluster with RStudio (new-ish, Runtime ML, no auto termination).
