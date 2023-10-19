@@ -99,7 +99,7 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 
 ## Catalog
 
-Read a parquet file from the Databricks Catalog.
+* Read a (parquet?) file from the Databricks Catalog.
 
 <image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/a632de43-c83e-41be-9577-3b7c89019156>
 
@@ -109,7 +109,7 @@ data <- SparkR::tableToDF("raw.default.country")
 data
 ```
 
-From Databrisks, read a .csv file from "disk".
+* Read a .csv file from "disk".
 
 ```r
 path <- "/databricks-datasets/Rdatasets/data-001/datasets.csv"
@@ -117,7 +117,7 @@ data <- readr::read_csv(path)
 data
 ```
 
-* From anywhere, read a .csv file from Azure storage.
+* Read a .csv file from Azure storage (works outside Databricks).
 
 <img width=700 src=https://github.com/2DegreesInvesting/tiltIndicator/assets/5856545/f8aa5a3e-ebff-48e6-87eb-889f477c8831>
 
