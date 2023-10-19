@@ -149,7 +149,8 @@ FRICTION
 
 ## Workflows
 
-- Create a notebook that writes then deletes .csv files.
+- Create a job that writes each column in a dataset to a .csv file (an
+  example).
 
 ``` r
 data <- cars
@@ -159,8 +160,6 @@ for (i in seq_along(cols)) {
   path <- paste0(cols[i], ".csv")
   message("Writing ", path, " in ", getwd())
   readr::write_csv(data[i], path)
-  
-  Sys.sleep(5)
 }
 ```
 
