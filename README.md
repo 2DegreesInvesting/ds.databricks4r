@@ -2,8 +2,7 @@
 # Databricks for RStudio users
 
 The goal of this series is to help R users understand if and how they
-can do in Databricks the things they already do elsewhere – mainly un
-RStudio and the Terminal.
+can do in Databricks the things they commonly do in RStudio.
 
 At the end of this series you’ll be able to do things like this:
 
