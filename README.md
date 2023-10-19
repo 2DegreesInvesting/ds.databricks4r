@@ -167,7 +167,7 @@ for (i in seq_along(cols)) {
 
 ## Compute
 
-- Create a new cluster with RStudio (new-ish, Runtime ML, no auto
+- Create a new cluster with RStudio (use Runtime ML, dissable auto
   termination).
 - Try to use it to run a previous file. Note it takes time to start.
 - Setup RStudio: Compute \> click on cluster \> Apps \> Set up RStudio.
@@ -177,7 +177,7 @@ FRICTION
 - Starting a cluster takes minutes.
 - RStudio lacks `sudo`.
 - RStudio requires no auto-termination.
-- RStudio fails to read from the Databricks Catalog.
+- RStudio lacks direct access to the Databricks Catalog.
 - RStudio won’t persist when restarting the cluster.
 
 ## Resources
