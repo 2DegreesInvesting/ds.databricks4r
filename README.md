@@ -17,7 +17,7 @@ At the end of this series you’ll be able to do things like this:
 
 ## Who is the audience?
 
-Analysts and developers used to working with R from the RStudio IDE.
+Analysts used to RStudio.
 
 ## Why is this important?
 
