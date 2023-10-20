@@ -128,13 +128,11 @@ storage_read_csv(container, "data/iris.csv")
 
 - SparkR is no longer on CRAN [(archived in 2021 for lack of
   maintenance)](https://cran.r-project.org/web/packages/SparkR/index.html).
-- The sparklyr package seem like a good alternative but I failed to use
-  it.
-- Code written for R dataframes may not work for [spark
-  dataframes](https://spark.apache.org/docs/latest/sparkr.html#sparkdataframe-operations).
 - The [sparklyr
   package](https://spark.rstudio.com/deployment/databricks-cluster.html)
-  may help but I failed to configure and use it.
+  seem like a good alternative but I failed to use it.
+- Code written for R dataframes may not work for [spark
+  dataframes](https://spark.apache.org/docs/latest/sparkr.html#sparkdataframe-operations).
 
 ## Workflows
 
@@ -153,6 +151,11 @@ for (i in seq_along(cols)) {
 ```
 
 - Create a workflow, run it and view it.
+
+**Friction**
+
+- There is no obvious way to turn the workflow into text and track it
+  with Git.
 
 ## Compute
 
