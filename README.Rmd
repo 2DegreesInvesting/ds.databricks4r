@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Databricks for RStudio users
+# Databricks for RStudio users and me
 
 The goal of this series is to help R users understand if and how they can do in
 Databricks the things they commonly do in RStudio.
