@@ -174,6 +174,7 @@ for (i in seq_along(cols)) {
 - YouTube [playlist](https://bit.ly/ds-incubator-videos).
 - [What is
   Databricks](https://docs.databricks.com/en/introduction/index.html).
+- [Video (46’)](https://youtu.be/VokwQdJWUas?si=Eb1_KH7smZzxUx8q)
 
 ## A note on friction
 
