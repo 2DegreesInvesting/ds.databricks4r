@@ -12,8 +12,7 @@ At the end of this series you’ll be able to do things like this:
 - Create a dataframe from a .csv file in the file system.
 - Create a spark dataframe from a table in the Databricks Catalog.
 - Create and run jobs.
-- Create a cluster with RStudio installed in it. \*\* the \####
-  Frictions.\*\*
+- Create a cluster with RStudio installed in it.
 
 ## Who is the audience?
 
