@@ -29,30 +29,18 @@ shouldn’t do with Databricks will save you time and frustration.
 
 ## Workspace
 
-- Add a folder: Home \> Add \> Folder
-- Add an R file: Home \> Add \> file.R
-- Connect to a running cluster.
-- Run
-
-``` r
-print("Hello world")
-```
-
-- Note the Output and Terminal tabs
-- Home \> Add \> Notebook
-
-``` r
-print("Hello world")
-```
-
-- Add a markdown chunk
+- Add a folder, file.R and notebook with markdown
+- Connect to a running cluster
 
 <!-- -->
 
-    %md
-    # Demo
+    %md 
+    # hi
 
-    Hello world.
+    %r
+    print("hi")
+
+- In the file.R note the Output and Terminal tabs
 
 **Friction**
 
@@ -65,19 +53,21 @@ print("Hello world")
 echo "hi"
 ```
 
-- The file system’s structure doesn’t match Databricks UI.
+- The working directory seems to vary with the language:
 
-``` bash
-$ ls /Workspace
-Repos  Shared  Users
+<!-- -->
 
-# Fails
-$ ls /Repos
-```
+    %r
+    getwd()
+    [1] "/tmp/Rserv/conn4266"
 
-<image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
+    %sh
+    Rscript -e "getwd()"
+    [1] "/databricks/driver"
 
-- The Terminal is ephemeral unless you use `tmux`.
+    %python
+    os.getcwd()
+    [1] "/databricks/driver"
 
 ## Repos
 

@@ -39,25 +39,19 @@ and frustration.
 
 ## Workspace
 
-* Add a folder: Home > Add > Folder
-* Add an R file: Home > Add > file.R 
-* Connect to a running cluster.
-* Run 
-```r
-print("Hello world")
+* Add a folder, file.R and notebook with markdown
+* Connect to a running cluster
 ```
-* Note the Output and Terminal tabs
-* Home > Add > Notebook
-```r
-print("Hello world")
+%md 
+# hi
 ```
-* Add a markdown chunk
-```
-%md
-# Demo
 
-Hello world.
 ```
+%r
+print("hi")
+```
+
+* In the file.R note the Output and Terminal tabs
 
 **Friction**
 
@@ -68,17 +62,25 @@ Hello world.
 # Fails
 echo "hi"
 ```
-* The file system's structure doesn't match Databricks UI.
-```bash
-$ ls /Workspace
-Repos  Shared  Users
 
-# Fails
-$ ls /Repos
+* The working directory seems to vary with the language:
 ```
-<image width=700 src=https://github.com/2DegreesInvesting/ds.databricks4r/assets/5856545/e5064487-bd68-4a9a-956f-f35ebb99481b>
+%r
+getwd()
+[1] "/tmp/Rserv/conn4266"
+```
 
-* The Terminal is ephemeral unless you use `tmux`.
+```
+%sh
+Rscript -e "getwd()"
+[1] "/databricks/driver"
+```
+
+```
+%python
+os.getcwd()
+[1] "/databricks/driver"
+```
 
 ## Repos
 
