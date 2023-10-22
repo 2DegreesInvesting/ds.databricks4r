@@ -2,16 +2,15 @@
 # Databricks for RStudio users
 
 The goal of this series is to help R users understand if and how they
-can do in Databricks the things they commonly do in RStudio.
+can do in Databricks the things they commonly do in RStudio. I’ll point
+to some frictions I see as an RStudio user new to Databricks.
 
 At the end of this series you’ll be able to do things like this:
 
 - Add folders, .R files and notebooks to your Workspace.
-- Connect to an existing cluster.
 - Work with Git and GitHub.
-- Create a dataframe from a .csv file in the file system.
 - Create a spark dataframe from a table in the Databricks Catalog.
-- Create and run jobs.
+- Run jobs.
 - Create a cluster with RStudio installed in it.
 
 ## Who is the audience?
@@ -20,17 +19,14 @@ Analysts used to RStudio.
 
 ## Why is this important?
 
-Databricks allows you to work with data at scale from a simple
-interface. With that simple interface you can do powerful things, but
-not all the things you typically do in RStudio, and not always in the
-way you’re used to. For example, sometimes you need to read, and
-manipulate data in a different way. Understanding what you can and
-shouldn’t do with Databricks will save you time and frustration.
+Databricks is like a racing car. It’s great for racing but for an
+RStudio user it may not be a confortable everyday car. Understanding
+what you can and shouldn’t do with Databricks will save you time and
+frustration.
 
 ## Workspace
 
 - Add a folder, file.R and notebook with markdown
-- Connect to a running cluster
 
 <!-- -->
 
@@ -40,19 +36,13 @@ shouldn’t do with Databricks will save you time and frustration.
     %r
     print("hi")
 
+- Connect to a running cluster
 - In the file.R note the Output and Terminal tabs
 
 **Friction**
 
 - Editing text is limited.
-
-- Only a few file formats are supported. Try bad.sh
-
-``` bash
-# Fails
-echo "hi"
-```
-
+- Only a few file formats are supported. Try a shell_script.sh
 - The working directory seems to vary with the language:
 
 <!-- -->
@@ -136,20 +126,6 @@ storage_read_csv(container, "data/iris.csv")
 
 ## Workflows
 
-- Create a job that writes each column in a dataset to a .csv file (an
-  example).
-
-``` r
-data <- cars
-cols <- names(data)
-
-for (i in seq_along(cols)) {
-  path <- paste0(cols[i], ".csv")
-  message("Writing ", path, " in ", getwd())
-  readr::write_csv(data[i], path)
-}
-```
-
 - Create a workflow, run it and view it.
 
 **Friction**
@@ -161,14 +137,13 @@ for (i in seq_along(cols)) {
 
 - Create a new cluster with RStudio (use Runtime ML, dissable auto
   termination).
-- Try to use it to run a previous file. Note it takes time to start.
 - Setup RStudio: Compute \> click on cluster \> Apps \> Set up RStudio.
 
 **Friction**
 
-- Starting a cluster takes minutes.
 - RStudio lacks `sudo`.
 - RStudio requires no auto-termination.
+- Starting a cluster takes minutes.
 - RStudio lacks direct access to the Databricks Catalog.
 - RStudio won’t persist when restarting the cluster.
 
@@ -177,11 +152,6 @@ for (i in seq_along(cols)) {
 - YouTube [playlist](https://bit.ly/ds-incubator-videos).
 - [What is
   Databricks](https://docs.databricks.com/en/introduction/index.html).
-- [Video (46’)](https://youtu.be/VokwQdJWUas?si=Eb1_KH7smZzxUx8q)
-
-## A note on friction
-
-I’m new to Databricks and that alone may explain many frictions.
 
 ## Thanks
 
