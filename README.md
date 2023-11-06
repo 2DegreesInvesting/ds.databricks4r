@@ -85,7 +85,7 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 
 ``` r
 path <- "raw.default.country"
-data <- SparkR::tableToDF("raw.default.country")
+data <- SparkR::tableToDF(path)
 data
 ```
 
